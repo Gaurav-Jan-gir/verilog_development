@@ -1,0 +1,8 @@
+[
+    {
+        "key": "ctrl+alt+n",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Verilog Automation",
+        "when": "editorTextFocus && resourceExtname == '.v'"
+    }
+]

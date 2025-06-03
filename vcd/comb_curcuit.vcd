@@ -1,0 +1,91 @@
+$date
+	Tue Jun 03 22:13:21 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module comb_two_tb $end
+$var wire 1 ! f $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$var reg 1 $ c $end
+$var reg 1 % d $end
+$scope module uut $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 $ c $end
+$var wire 1 % d $end
+$var wire 1 ! f $end
+$var wire 1 & t1 $end
+$var wire 1 ' t2 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1'
+0&
+0%
+0$
+0#
+0"
+1!
+$end
+#30000
+1"
+#50000
+1#
+0"
+#70000
+0!
+1&
+1"
+#90000
+1!
+0'
+0&
+1$
+0#
+0"
+#110000
+1"
+#130000
+1#
+0"
+#150000
+1&
+1"
+#170000
+0&
+1%
+0$
+0#
+0"
+#190000
+1"
+#210000
+1#
+0"
+#230000
+1&
+1"
+#250000
+0&
+1$
+0#
+0"
+#270000
+1"
+#290000
+1#
+0"
+#310000
+1&
+1"
+#330000
