@@ -2,6 +2,5 @@ module andGate (A, B, C);
     input A, B;
     output C;
 
-    assign C = A & B; // AND operation
+    assign C = A & B;
 endmodule
-// Testbench for the AND gate
