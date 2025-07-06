@@ -1,0 +1,29 @@
+Logic values in verilog
+1. High -> '1'
+2. Low  -> '0'
+3. Don't Care -> 'x'
+4. High Impedence -> 'z'
+
+Predefined Logic gates in verilog
+1. AND GATE -> '&'
+2. OR GATE  -> '|'
+3. XOR GATE -> '^'
+4. NOT GATE -> '~'
+5. NAND GATE -> ~&
+6. NOR 
+7. XNOR
+8. BUF
+
+Buffer with control
+9. BUFIF1  = if ctrl = 1 then out = in else 'z'
+10. BUFIF0 = if ctrl = 0 then out = in else 'z'
+11. NOTIF0 = if ctrl = 0 then out = ~in else 'z'
+12. NOTIF1 = if ctrl = 1 then out = ~in else 'z'
+
+use -> 'gate_type' 'gate_name'('output','inputs','control')
+    e.g nand G(out, in1, in2)
+
+output must be net type variable only e.g. wire
+input can be either net or register
+
+

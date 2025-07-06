@@ -4,12 +4,9 @@
         {
             "label": "Run Verilog Automation",
             "type": "shell",
-            "command": "iverilog",
+            "command": "${workspaceFolder}/.vscode/RunVerilog.exe",
             "args": [
-                "-o",
-                "${workspaceFolder}/vvp/${fileBasenameNoExtension}.vvp",
-                "${file}",
-                "${workspaceFolder}/testBench/${fileBasenameNoExtension}_tb.v"
+                "${file}"
             ],
             "group": {
                 "kind": "build",
