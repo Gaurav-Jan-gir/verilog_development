@@ -122,15 +122,15 @@ void generateTestbench(const ModuleInfo& info, const string& vcdPath, const stri
     
     // Generate simple test cases based on number of inputs
     int numInputs = info.inputs.size();
-    int testCases = (1 << numInputs); // 2^n test cases
-    
-    for (int i = 0; i < testCases; i++) {
-        tb << "        #10;\n";
-        for (int j = 0; j < numInputs; j++) {
-            tb << "        " << info.inputs[j] << " = " << ((i >> j) & 1) << ";\n";
+    if (numInputs > 6) {
+        // For large inputs, generate random test cases instead of exhaustive
+        tb << "        // Random test cases for large input modules\n";
+        tb << "        repeat(20) begin\n";
+        for (const auto& input : info.inputs) {
+            tb << "            " << input << " = $random;\n";
         }
-        tb << "        #10;\n";
-        tb << "        $display(\"Time=%0t: ";
+        tb << "            #10;\n";
+        tb << "            $display(\"Time=%0t: ";
         for (const auto& input : info.inputs) {
             tb << input << "=%b ";
         }
@@ -144,7 +144,34 @@ void generateTestbench(const ModuleInfo& info, const string& vcdPath, const stri
         for (const auto& output : info.outputs) {
             tb << ", " << output;
         }
-        tb << ");\n\n";
+        tb << ");\n";
+        tb << "        end\n\n";
+    } else {
+        // Exhaustive test cases for small inputs
+        int testCases = (1 << numInputs); // 2^n test cases
+        
+        for (int i = 0; i < testCases; i++) {
+            tb << "        #10;\n";
+            for (int j = 0; j < numInputs; j++) {
+                tb << "        " << info.inputs[j] << " = " << ((i >> j) & 1) << ";\n";
+            }
+            tb << "        #10;\n";
+            tb << "        $display(\"Time=%0t: ";
+            for (const auto& input : info.inputs) {
+                tb << input << "=%b ";
+            }
+            for (const auto& output : info.outputs) {
+                tb << output << "=%b ";
+            }
+            tb << "\", $time";
+            for (const auto& input : info.inputs) {
+                tb << ", " << input;
+            }
+            for (const auto& output : info.outputs) {
+                tb << ", " << output;
+            }
+            tb << ");\n\n";
+        }
     }
     
     tb << "        #10;\n";
@@ -156,7 +183,12 @@ void generateTestbench(const ModuleInfo& info, const string& vcdPath, const stri
 }
 
 void createDirectory(const string& path) {
-    string cmd = "mkdir \"" + path + "\" 2>nul";
+    // Cross-platform directory creation
+    #ifdef _WIN32
+        string cmd = "mkdir \"" + path + "\" 2>nul";
+    #else
+        string cmd = "mkdir -p \"" + path + "\" 2>/dev/null";
+    #endif
     system(cmd.c_str());
 }
 
@@ -173,9 +205,15 @@ int main(int argc, char* argv[]) {
     createDirectory("testBench");
     createDirectory("vcd");
     createDirectory("vvp");
-      string testbenchPath = "testBench\\" + baseName + "_tb.v";
+    
+    #ifdef _WIN32
+        string testbenchPath = "testBench\\" + baseName + "_tb.v";
+        string vvpPath = "vvp\\" + baseName + ".vvp";
+    #else
+        string testbenchPath = "testBench/" + baseName + "_tb.v";
+        string vvpPath = "vvp/" + baseName + ".vvp";
+    #endif
     string vcdPath = "vcd/" + baseName + ".vcd";
-    string vvpPath = "vvp\\" + baseName + ".vvp";
     
     cout << "Processing " << verilogFile << "..." << endl;
     
@@ -195,9 +233,16 @@ int main(int argc, char* argv[]) {
     for (const auto& output : info.outputs) cout << output << " ";
     cout << endl;
     
-    // Generate testbench
-    generateTestbench(info, vcdPath, testbenchPath);
-    cout << "Generated testbench: " << testbenchPath << endl;
+    // Check if testbench already exists
+    ifstream testbenchCheck(testbenchPath);
+    if (testbenchCheck.good()) {
+        testbenchCheck.close();
+        cout << "Testbench already exists: " << testbenchPath << " (skipping generation)" << endl;
+    } else {
+        // Generate testbench
+        generateTestbench(info, vcdPath, testbenchPath);
+        cout << "Generated testbench: " << testbenchPath << endl;
+    }
     
     // Compile with Icarus Verilog
     string compileCmd = "iverilog -o \"" + vvpPath + "\" \"" + verilogFile + "\" \"" + testbenchPath + "\"";
@@ -220,17 +265,19 @@ int main(int argc, char* argv[]) {
         cout << "  Testbench: " << testbenchPath << endl;
         cout << "  VCD file: " << vcdPath << endl;
         cout << "  VVP file: " << vvpPath << endl;
-        cout << "You can view the VCD file using a waveform viewer." << endl;
-        cout << "For example, you can use GTKWave:" << endl;
-        cout << "  gtkwave \"" << vcdPath << "\"" << endl;
-        string compileCmd2 = "  gtkwave \"" + vcdPath + "\"";
-        cout << "Compiling: " << compileCmd2 << endl;
-        int compileResult2 = system(compileCmd2.c_str());
+        cout << "\nYou can view the VCD file using a waveform viewer:" << endl;
+        cout << "  GTKWave: gtkwave \"" << vcdPath << "\"" << endl;
+        cout << "  Surfer: surfer \"" << vcdPath << "\"" << endl;
         
-        if (compileResult2 != 0) {
-            cout << "Compilation failed!" << endl;
-            return 1;
-        }
+        // Optional: Auto-open GTKWave if available
+        cout << "\nAttempting to open waveform viewer..." << endl;
+        string waveCmd;
+        #ifdef _WIN32
+            waveCmd = "start gtkwave \"" + vcdPath + "\" 2>nul";
+        #else
+            waveCmd = "which gtkwave >/dev/null 2>&1 && gtkwave \"" + vcdPath + "\" >/dev/null 2>&1 &";
+        #endif
+        system(waveCmd.c_str());
 
     } else {
         cout << "Simulation failed!" << endl;
