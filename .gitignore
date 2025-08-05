@@ -213,3 +213,8 @@ notes.txt
 todo.txt
 scratch/
 experiments/
+src/vending_machine.v
+.gitignore
+IP_PROTECTION_STRATEGY.md
+testBench/vending_machine_tb.v
+IMPLEMENTATION_SUMMARY.md
