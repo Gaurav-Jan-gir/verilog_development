@@ -1,4 +1,4 @@
-// Impliment an n-bit adder using generate in verilog
+// Implement an n-bit adder using generate in verilog
 
 module full_adder(
     input a, input b, input cin,
