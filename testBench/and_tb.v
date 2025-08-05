@@ -15,7 +15,7 @@ module andGate_tb;
 
     initial begin
         // Initialize VCD dump
-        $dumpfile("vcd\and.vcd");
+        $dumpfile("vcd/and.vcd");
         $dumpvars(0, andGate_tb);
 
         // Initialize inputs
