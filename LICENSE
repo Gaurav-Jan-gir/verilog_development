@@ -1,0 +1,159 @@
+MIT License with Commercial Use Restrictions
+
+Copyright (c) 2025 Gaurav Jangir
+
+## TERMS AND CONDITIONS
+
+### 1. DEFINITIONS
+
+- "Software" refers to the Verilog Automation Tool, including but not limited to:
+  - RunVerilog.cpp and its compiled binaries
+  - All associated scripts, documentation, and configuration files
+  - The automated testbench generation algorithms and methodologies
+  - Any derived works or improvements thereof
+
+- "Commercial Use" means any use of the Software for commercial advantage or monetary compensation, including but not limited to:
+  - Selling the Software or any derivative works
+  - Including the Software in commercial products or services
+  - Using the Software in commercial development or consulting
+  - Licensing the Software to third parties for commercial purposes
+
+- "Personal Use" means use by individuals for educational, research, or personal projects without commercial benefit
+
+- "Educational Use" means use by accredited educational institutions for teaching and academic research purposes
+
+### 2. GRANT OF RIGHTS
+
+#### 2.1 Personal and Educational Use
+Permission is hereby granted, free of charge, to any person obtaining a copy of this Software, to use, copy, modify, and distribute the Software for Personal Use and Educational Use, subject to the following conditions:
+
+- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software
+- Any modifications must be clearly marked and attributed
+- Derivative works must retain this license
+
+#### 2.2 Commercial Use Restrictions
+**COMMERCIAL USE OF THIS SOFTWARE IS STRICTLY PROHIBITED WITHOUT EXPLICIT WRITTEN PERMISSION FROM THE COPYRIGHT HOLDER.**
+
+Any Commercial Use requires:
+- Prior written authorization from Gaurav Jangir
+- Execution of a separate commercial license agreement
+- Payment of appropriate licensing fees as determined by the copyright holder
+
+### 3. INTELLECTUAL PROPERTY PROTECTION
+
+#### 3.1 Patents and Trade Secrets
+The Software contains proprietary algorithms, methodologies, and trade secrets including but not limited to:
+- Automatic testbench generation algorithms
+- Smart test pattern generation techniques
+- Cross-platform automation methodologies
+- Integration patterns and workflows
+
+#### 3.2 Trademark Rights
+"Verilog Automation Tool" and associated branding are trademarks of Gaurav Jangir. Use of these trademarks requires explicit permission.
+
+### 4. ATTRIBUTION REQUIREMENTS
+
+All distributions of the Software must include:
+- This complete license text
+- Copyright notice: "Verilog Automation Tool © 2025 Gaurav Jangir"
+- Link to the original repository: https://github.com/Gaurav-Jan-gir/verilog_development
+- Clear indication if modifications were made
+
+### 5. PROHIBITED ACTIVITIES
+
+The following activities are explicitly prohibited without written permission:
+
+#### 5.1 Commercial Exploitation
+- Selling or licensing the Software or derivative works
+- Including the Software in commercial products or services
+- Using the Software to provide commercial development or consulting services
+- Creating competing commercial products based on the Software
+
+#### 5.2 Misrepresentation
+- Claiming authorship or ownership of the Software
+- Removing or obscuring copyright notices
+- Using the Software name or branding without permission
+- Misrepresenting the origin or licensing terms
+
+### 6. ENFORCEMENT AND REMEDIES
+
+#### 6.1 Violation Consequences
+Violation of this license results in:
+- Immediate termination of all rights granted herein
+- Obligation to cease all use and distribution
+- Liability for damages and legal costs
+- Potential criminal prosecution under applicable laws
+
+#### 6.2 Legal Remedies
+The copyright holder reserves all rights to:
+- Seek injunctive relief to prevent continued violations
+- Recover actual damages and lost profits
+- Obtain statutory damages where applicable
+- Recover attorney fees and court costs
+
+### 7. COMMERCIAL LICENSING
+
+#### 7.1 Available Commercial Licenses
+Commercial licenses are available for:
+- **Single Developer License**: Individual commercial use
+- **Team License**: Small team commercial use (2-10 developers)
+- **Enterprise License**: Unlimited organizational use
+- **OEM License**: Integration into commercial products
+- **Custom License**: Tailored arrangements for specific needs
+
+#### 7.2 Licensing Contact
+For commercial licensing inquiries, contact:
+- **Email**: [Your Email Address]
+- **Subject Line**: "Commercial License Inquiry - Verilog Automation Tool"
+- **Required Information**: Intended use case, organization size, timeline
+
+### 8. WARRANTIES AND LIABILITY
+
+#### 8.1 Warranty Disclaimer
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+#### 8.2 Limitation of Liability
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+### 9. UPDATES AND MODIFICATIONS
+
+#### 9.1 License Updates
+This license may be updated periodically. Continued use of updated versions constitutes acceptance of license modifications.
+
+#### 9.2 Grandfather Provisions
+Existing authorized uses under previous license versions remain valid unless explicitly revoked.
+
+### 10. JURISDICTION AND GOVERNING LAW
+
+This license shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions. Any disputes shall be resolved in the courts of [Your Jurisdiction].
+
+### 11. CONTACT INFORMATION
+
+**Copyright Holder**: Gaurav Jangir
+**Project Repository**: https://github.com/Gaurav-Jan-gir/verilog_development
+**License Inquiries**: [Your Email Address]
+
+---
+
+## SUMMARY FOR USERS
+
+### ✅ PERMITTED (No Permission Required)
+- Personal learning and experimentation
+- Academic research and teaching
+- Open source project development
+- Modification for personal use
+- Sharing for educational purposes
+
+### ❌ PROHIBITED (Permission Required)
+- Any commercial use or monetization
+- Inclusion in commercial products
+- Commercial consulting or services
+- Selling or licensing to others
+- Creating competing commercial products
+
+### 📧 NEED PERMISSION?
+Contact Gaurav Jangir for commercial licensing options.
+
+---
+
+**This license protects the author's commercial interests while allowing free use for personal, educational, and open source purposes. Commercial users must obtain proper licensing to ensure compliance and support continued development.**
