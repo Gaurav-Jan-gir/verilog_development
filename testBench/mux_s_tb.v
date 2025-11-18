@@ -12,7 +12,7 @@ module mux_s_tb;
     );
 
     initial begin
-        $dumpfile("vcd/mux_s_tb.vcd");
+        $dumpfile("vcd/mux_s.vcd");
         $dumpvars(0, mux_s_tb);
         $monitor("Time: %0t, in: %h, sel: %h, out: %b", $time, in, sel, out);
         

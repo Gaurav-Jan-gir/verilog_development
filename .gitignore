@@ -218,3 +218,11 @@ src/vending_machine.v
 IP_PROTECTION_STRATEGY.md
 testBench/vending_machine_tb.v
 IMPLEMENTATION_SUMMARY.md
+lab_manual_latex/*
+comparator.json
+build/*.svg
+build/*.v
+build/*.xml
+build/*.new
+src\HDL_LAB\*
+show.dot

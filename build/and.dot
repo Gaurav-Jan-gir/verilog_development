@@ -1,0 +1,12 @@
+digraph "andGate" {
+label="andGate";
+rankdir="LR";
+remincross=true;
+n1 [ shape=octagon, label="A", color="black", fontcolor="black"];
+n2 [ shape=octagon, label="B", color="black", fontcolor="black"];
+n3 [ shape=octagon, label="C", color="black", fontcolor="black"];
+c5 [ shape=record, label="{{<p1> A|<p2> B}|$1\n$and|{<p4> Y}}",  ];
+n1:e -> c5:p1:w [color="black", fontcolor="black", label=""];
+n2:e -> c5:p2:w [color="black", fontcolor="black", label=""];
+c5:p4:e -> n3:w [color="black", fontcolor="black", label=""];
+}

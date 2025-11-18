@@ -1,0 +1,19 @@
+digraph "d_flipflop" {
+label="d_flipflop";
+rankdir="LR";
+remincross=true;
+n2 [ shape=octagon, label="D", color="black", fontcolor="black"];
+n3 [ shape=octagon, label="Q", color="black", fontcolor="black"];
+n4 [ shape=octagon, label="Qn", color="black", fontcolor="black"];
+n5 [ shape=octagon, label="clk", color="black", fontcolor="black"];
+c8 [ shape=record, label="{{<p6> A}|$3\n$not|{<p7> Y}}",  ];
+c10 [ shape=record, label="{{<p9> CLK|<p2> D}|$11\n$dff|{<p3> Q}}",  ];
+c11 [ shape=record, label="{{<p9> CLK|<p2> D}|$12\n$dff|{<p3> Q}}",  ];
+c8:p7:e -> c11:p2:w [color="black", fontcolor="black", label=""];
+n2:e -> c10:p2:w [color="black", fontcolor="black", label=""];
+n2:e -> c8:p6:w [color="black", fontcolor="black", label=""];
+c10:p3:e -> n3:w [color="black", fontcolor="black", label=""];
+c11:p3:e -> n4:w [color="black", fontcolor="black", label=""];
+n5:e -> c10:p9:w [color="black", fontcolor="black", label=""];
+n5:e -> c11:p9:w [color="black", fontcolor="black", label=""];
+}
