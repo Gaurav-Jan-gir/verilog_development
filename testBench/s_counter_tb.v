@@ -10,9 +10,10 @@ module s_counter_tb;
     s_counter uut (
         .clk(clk),
         .reset(reset),
-        .[3:0] count([3:0] count)
+        .count(count)
     );
 
+    always #5 clk = ~clk;
     initial begin
         // Initialize VCD dump
         $dumpfile("vcd/s_counter.vcd");
@@ -20,33 +21,17 @@ module s_counter_tb;
 
         // Initialize inputs
         clk = 0;
-        reset = 0;
+        reset = 1; // active-high reset asserted
+
+        // Reset pulse
+        #20;
+        reset = 0; // deassert active-high reset
 
         // Test cases
-        #10;
-        clk = 0;
-        reset = 0;
-        #10;
-        $display("Time=%0t: clk=%b reset=%b [3:0] count=%b ", $time, clk, reset, [3:0] count);
 
-        #10;
-        clk = 1;
-        reset = 0;
-        #10;
-        $display("Time=%0t: clk=%b reset=%b [3:0] count=%b ", $time, clk, reset, [3:0] count);
-
-        #10;
-        clk = 0;
-        reset = 1;
-        #10;
-        $display("Time=%0t: clk=%b reset=%b [3:0] count=%b ", $time, clk, reset, [3:0] count);
-
-        #10;
-        clk = 1;
-        reset = 1;
-        #10;
-        $display("Time=%0t: clk=%b reset=%b [3:0] count=%b ", $time, clk, reset, [3:0] count);
-
+        // Clocked stimulus
+        // No data inputs: just run some cycles
+        repeat (32) begin @(posedge clk); #1; $display("T=%0t count=%b", $time, count); end
         #10;
         $finish;
     end

@@ -1,0 +1,23 @@
+digraph "t_flipflop" {
+label="t_flipflop";
+rankdir="LR";
+remincross=true;
+n3 [ shape=octagon, label="Q", color="black", fontcolor="black"];
+n4 [ shape=octagon, label="Qn", color="black", fontcolor="black"];
+n5 [ shape=octagon, label="T", color="black", fontcolor="black"];
+n6 [ shape=octagon, label="clk", color="black", fontcolor="black"];
+c10 [ shape=record, label="{{<p7> CLK|<p8> D|<p9> EN}|$17\n$dffe|{<p3> Q}}",  ];
+c11 [ shape=record, label="{{<p7> CLK|<p8> D|<p9> EN}|$18\n$dffe|{<p3> Q}}",  ];
+c14 [ shape=record, label="{{<p12> A}|$8\n$not|{<p13> Y}}",  ];
+c15 [ shape=record, label="{{<p12> A}|$9\n$not|{<p13> Y}}",  ];
+c14:p13:e -> c10:p8:w [color="black", fontcolor="black", label=""];
+c15:p13:e -> c11:p8:w [color="black", fontcolor="black", label=""];
+c10:p3:e -> n3:w [color="black", fontcolor="black", label=""];
+n3:e -> c14:p12:w [color="black", fontcolor="black", label=""];
+c11:p3:e -> n4:w [color="black", fontcolor="black", label=""];
+n4:e -> c15:p12:w [color="black", fontcolor="black", label=""];
+n5:e -> c10:p9:w [color="black", fontcolor="black", label=""];
+n5:e -> c11:p9:w [color="black", fontcolor="black", label=""];
+n6:e -> c10:p7:w [color="black", fontcolor="black", label=""];
+n6:e -> c11:p7:w [color="black", fontcolor="black", label=""];
+}

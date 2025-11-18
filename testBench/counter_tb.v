@@ -16,7 +16,7 @@ module counter_tb;
     always #5 clock = ~clock;  // Clock period of 10 time units
     
     initial begin
-        $dumpfile("vcd/counter_tb.vcd");
+        $dumpfile("vcd/counter.vcd");
         $dumpvars(0, counter_tb);
         
         // Monitor the signals

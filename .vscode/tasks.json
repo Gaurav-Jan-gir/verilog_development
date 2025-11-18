@@ -23,5 +23,23 @@
             },
             "problemMatcher": []
         }
+        ,
+        {
+            "label": "Render DOT to SVG",
+            "type": "shell",
+            "command": "dot",
+            "args": [
+                "-Tsvg",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.svg"
+            ],
+            "presentation": {
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "problemMatcher": []
+        }
     ]
 }

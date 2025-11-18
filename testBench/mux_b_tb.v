@@ -9,7 +9,7 @@ module mux_tb;
         .out(out)
     );
     initial begin
-        $dumpfile("vcd/mux_tb.vcd");
+        $dumpfile("vcd/mux_b.vcd");
         $dumpvars(0, mux_tb);
         $monitor("Time: %0t, in: %h, sel: %h, out: %b", $time, in, sel, out);
         // Test case 1
